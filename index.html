@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Cinema VR</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <div id="ui-container">
+            <header>
+                <h1>Galaxy Cinema VR</h1>
+                <p>Experience your videos in a peaceful cosmic environment.</p>
+            </header>
+
+            <main>
+                <div class="card">
+                    <div id="protocol-warning" class="hidden">
+                        <p class="warning-text">⚠️ Using HTTP. VR features require <strong>HTTPS</strong>. Please use
+                            the https:// link.</p>
+                    </div>
+
+                    <div class="setup-step">
+                        <span class="step-number">1</span>
+                        <label for="video-input" class="file-label">
+                            <span class="icon">📁</span>
+                            Select a video from your headset
+                        </label>
+                        <input type="file" id="video-input" accept="video/*">
+                    </div>
+
+                    <div id="video-info" class="hidden">
+                        <p id="file-name"></p>
+                    </div>
+
+                    <div class="setup-step">
+                        <span class="step-number">2</span>
+                        <button id="enter-vr-btn" disabled>
+                            Enter Galaxy
+                        </button>
+                    </div>
+                </div>
+            </main>
+
+
+            <footer>
+                <p>Optimized for Meta Quest 3</p>
+            </footer>
+        </div>
+
+        <div id="vr-overlay">
+            <!-- Three.js content will be here -->
+        </div>
+
+        <video id="video-player" crossorigin="anonymous" playsinline style="display:none"></video>
+    </div>
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
